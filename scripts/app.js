@@ -12,14 +12,22 @@ const handleKeyboardButtonPress = (event) => {
     getElement(haveToPress).classList.remove("bg-pink-400");
     getElement("score").innerText = parseInt(getElement("score").innerText) + 1;
     continueGame();
-  } else if (parseInt(getElement("life").innerText) > 0) {
-    console.error("not mathched");
-    getElement("life").innerText = parseInt(getElement("life").innerText) - 1;
+  } else {
+    if (parseInt(getElement("life").innerText) > 0) {
+      console.error("not mathched");
+      getElement("life").innerText = parseInt(getElement("life").innerText) - 1;
+    }
+    else {
+      getElement(haveToPress).classList.remove("bg-pink-400");
+      showElementByID("final-score");
+      hideElementByID("play-ground");
+      getElement("final-score-element").innerText =getElement("score").innerText;
+      
+      resetScores();
+    }
   }
 };
-else {
-  
-}
+
 document.addEventListener("keyup", handleKeyboardButtonPress);
 
 function continueGame() {
@@ -30,11 +38,17 @@ function continueGame() {
 }
 
 function play() {
+  //
   hideElementByID("home");
+  hideElementByID("final-score");
   showElementByID("play-ground");
   continueGame();
 }
 
+const resetScores = () => {
+  getElement("life").innerText = 5;
+  getElement("score").innerText = 0;
+};
 // buttons clicked  here
 document.getElementById("play-button").addEventListener("click", () => {
   play();
