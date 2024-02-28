@@ -16,9 +16,136 @@
 
     <!-- tailwind and daisyUI end -->
   </head>
-  <body class="w-[1200px] mx-auto mt-10">
-    <section class="home"></section>
-    <section class="play-ground"></section>
-    <section class="score"></section>
+  <body class="pt-10 bg-[#010313]">
+    <main
+      class="min-h-screen bg-[url(images/background.png)] bg-contain bg-no-repeat bg-center"
+    >
+      <!--  home screan -->
+      <section
+        id="home"
+        class="home flex items-center justify-center min-h-screen"
+      >
+        <div class="flex flex-col items-center justify-center">
+          <h2 class="text-8xl font-normal text-white uppercase anton">
+            ALPHABET CLASH
+          </h2>
+          <p class="poppins font-medium leading-7 text-2xl text-[#fff] my-5">
+            Your Keyboard Kung Fu : Press “Enter” to Play
+          </p>
+          <button
+            id="play-button"
+            class="btn btn-active bg-white capitalize text-lg poppins font-extrabold"
+          >
+            play
+          </button>
+        </div>
+      </section>
+      <!-- section ended here -->
+      <!-- section play ground start  -->
+      <section id="play-ground" class="play-ground hidden">
+        <!-- play ground container -->
+        <div class="container">
+          <!-- screan -->
+          <div>
+            <div
+              class="artboard artboard-horizontal phone-6 border-[20px] mx-auto border-gray-950 border-opacity-70 rounded-2xl bg-[#FFFFFF73]"
+            >
+              <div class="w-full">
+                <p
+                  class="bg-purple-700 poppins font-medium text-lg text-[#fff] w-fit px-10 py-2 rounded-br-lg rounded-bl-lg mx-auto"
+                >
+                  Don't watch keyboard while playing...
+                </p>
+              </div>
+              <h2
+                id="letter-element"
+                class="text-8xl font-extrabold text-[#fff] text-center uppercase"
+              >
+                y
+              </h2>
+            </div>
+          </div>
+          <!-- kyeboard -->
+          <div class="my-10">
+            <div class="flex justify-center gap-1 my-1 w-full">
+              <kbd class="kbd" id="q">q</kbd>
+              <kbd class="kbd" id="w">w</kbd>
+              <kbd class="kbd" id="e">e</kbd>
+              <kbd class="kbd" id="r">r</kbd>
+              <kbd class="kbd" id="t">t</kbd>
+              <kbd class="kbd" id="y">y</kbd>
+              <kbd class="kbd" id="u">u</kbd>
+              <kbd class="kbd" id="i">i</kbd>
+              <kbd class="kbd" id="o">o</kbd>
+              <kbd class="kbd" id="p">p</kbd>
+            </div>
+            <div class="flex justify-center gap-1 my-1 w-full">
+              <kbd class="kbd" id="a">a</kbd>
+              <kbd class="kbd" id="s">s</kbd>
+              <kbd class="kbd" id="d">d</kbd>
+              <kbd class="kbd" id="f">f</kbd>
+              <kbd class="kbd" id="g">g</kbd>
+              <kbd class="kbd" id="h">h</kbd>
+              <kbd class="kbd" id="j">j</kbd>
+              <kbd class="kbd" id="k">k</kbd>
+              <kbd class="kbd" id="l">l</kbd>
+            </div>
+            <div class="flex justify-center gap-1 my-1 w-full">
+              <kbd class="kbd" id="z">z</kbd>
+              <kbd class="kbd" id="x">x</kbd>
+              <kbd class="kbd" id="c">c</kbd>
+              <kbd class="kbd" id="v">v</kbd>
+              <kbd class="kbd" id="b">b</kbd>
+              <kbd class="kbd" id="n">n</kbd>
+              <kbd class="kbd" id="m">m</kbd>
+              <kbd class="kbd" id="slash">/</kbd>
+            </div>
+          </div>
+          <!-- live score -->
+          <div class="flex justify-between w-[1200px] mx-auto">
+            <!-- react button container -->
+            <div>
+              <button class="btn bg-purple-800 border-0">
+                life
+                <img src="images/love.svg" alt="" class="" />
+                <span id="life" class="text-xl font-bold">5</span>
+              </button>
+            </div>
+            <!-- score button container -->
+            <div>
+              <button class="btn capitalize bg-purple-500 border-0">
+                score
+                <img src="images/dollar.svg" alt="" />
+                <span id="score" class="text-xl font-bold">0</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section ended -->
+
+      <!-- section socore start here  -->
+      <section
+        class="score h-screen flex items-center justify-center poppins hidden"
+      >
+        <div
+          class="w-[500px] bg-purple-300 rounded-lg flex flex-col items-center justify-center p-10"
+        >
+          <div class="flex items-cener justify-center">
+            <span class="text-3xl font-bold capitalize">score:</span>
+            <div class="flex flex-col items-center justify-center">
+              <span id="score" class="font-extrabold text-3xl ms-3">40</span>
+            </div>
+          </div>
+          <button class="btn btn-outline my-5 bg-[#fff] border-0">
+            Play Now
+          </button>
+          <p class="text-2xl font-bold">Practice will make you Pro</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="scripts/utilitie.js"></script>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
